@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   outline: none;
+  -webkit-appearance: none;
 }
 a {
   color: #333;
@@ -25,7 +26,7 @@ a {
   overflow: hidden;
 }
 .wrap .left-panel {
-  width: 25%;
+  width: 300px;
   height: 100%;
   float: left;
 }
@@ -222,8 +223,10 @@ a {
   background-color: #fff;
   top: 0;
   left: 0;
-  width: 400px;
+  min-width: 30%;
   margin: 1em;
+  border-width: 0 0 1px 0;
+  border-color: #666;
 }
 .wrap .right-panel .player-panel #itemInfo .nowPlayingLabel {
   width: 100%;
@@ -239,9 +242,8 @@ a {
   padding: 0 10px;
   line-height: 30px;
   background: #ffffff;
-  border-width: 0 0 1px 0;
-  border-color: #666;
-  width: 95%;
+  width: 90%;
+  border: none;
 }
 .wrap .right-panel .player-panel #hlsPlayer .vjs-big-play-button {
   display: none;
@@ -309,7 +311,8 @@ a {
   border-width: 0 0 1px 0;
   border-color: #666;
   display: inline-block;
-  width: 75%;
+  width: 72%;
+  border-radius: 0px;
 }
 .mask .win.setting_panel .ent input[type='button'] {
   height: 32px;
@@ -321,6 +324,7 @@ a {
   display: inline-block;
   width: 20%;
   margin-left: 2em;
+  border-radius: 0px;
 }
 .mask .win.setting_panel .ent input[type='button']:hover {
   background: #5682a3;
