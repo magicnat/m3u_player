@@ -44,7 +44,7 @@ var tvmPlayer = (function() {
         src: url,
         type: 'application/x-mpegURL'
       });
-      if(window.innerWidth < 600) fn.toggleMenu();
+      if(window.innerWidth < 768 || window.innerHeight < 768) fn.toggleMenu();
       player.play();
       fn.setHighlight(id);
     },
