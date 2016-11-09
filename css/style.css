@@ -1,0 +1,193 @@
+html {
+  font-size: 14px;
+  font-family: 'Microsoft JhengHei', '微軟正黑體', 'Microsoft YaHei', '微软雅黑', Tahoma, Verdana, sans-serif;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+.wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.wrap .left-panel {
+  width: 300px;
+  height: 100%;
+  float: left;
+}
+.wrap .left-panel #appMenuToggle {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #5682a3;
+  color: #ffffff;
+  display: block;
+  position: relative;
+  z-index: 99;
+}
+.wrap .left-panel #appMenuToggle:hover,
+.wrap .left-panel #appMenuToggle.on {
+  background: #497799;
+}
+.wrap .left-panel #appMenuToggle .icon {
+  width: 20px;
+  height: 25px;
+  top: 12px;
+  left: 20px;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+.wrap .left-panel #appMenuToggle .icon b,
+.wrap .left-panel #appMenuToggle .icon i {
+  width: 100%;
+  height: 2px;
+  margin: 5px 0;
+  background: #ffffff;
+  display: block;
+}
+.wrap .left-panel #appMenuToggle .title {
+  margin: 0 0 0 65px;
+}
+.wrap .left-panel .channel-list-panel {
+  width: 100%;
+  border-right: 1px solid #e9ebed;
+  box-sizing: border-box;
+}
+.wrap .left-panel .channel-list-panel .search-panel {
+  width: 100%;
+  padding: 12px 0;
+}
+.wrap .left-panel .channel-list-panel .search-panel #channelSearchBox {
+  width: 93%;
+  height: 35px;
+  line-height: 35px;
+  margin: 0 auto;
+  padding: 0 10px;
+  background: #f2f2f2;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #a0a8b0;
+  font-size: 12px;
+  box-sizing: border-box;
+  display: block;
+  -webkit-transition: .3s all ease;
+          transition: .3s all ease;
+}
+.wrap .left-panel .channel-list-panel .search-panel #channelSearchBox:focus {
+  border: 1px solid #d9dbde;
+  background: #ffffff;
+}
+.wrap .left-panel .channel-list-panel #channelList {
+  width: 100%;
+  overflow: auto;
+}
+.wrap .left-panel .channel-list-panel #channelList::-webkit-scrollbar {
+  width: 1px;
+  height: 32px;
+  background-color: transparent;
+}
+.wrap .left-panel .channel-list-panel #channelList::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.wrap .left-panel .channel-list-panel #channelList::-webkit-scrollbar-thumb {
+  background-color: #c3c3c3;
+}
+.wrap .left-panel .channel-list-panel #channelList li {
+  padding: 10px 20px;
+  border-top: 1px solid #f0f0f0;
+  cursor: pointer;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.wrap .left-panel .channel-list-panel #channelList li:hover {
+  background: #f2fffa;
+}
+.wrap .left-panel .channel-list-panel #channelList li.curr {
+  background: #6490b1;
+  color: #ffffff;
+}
+.wrap .left-panel .channel-list-panel #channelList li.curr .num {
+  background: #ffffff;
+  color: #6490b1;
+}
+.wrap .left-panel .channel-list-panel #channelList li.hide {
+  display: none;
+}
+.wrap .left-panel .channel-list-panel #channelList li .num {
+  width: 28px;
+  height: 20px;
+  margin: 0 10px 0 0;
+  line-height: 20px;
+  background: #c4c4c4;
+  color: #ffffff;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 12px;
+  float: left;
+  display: block;
+}
+.wrap .right-panel {
+  float: left;
+}
+.wrap .right-panel .prog-info {
+  width: 100%;
+  height: 50px;
+  background: #5682a3;
+  color: #ffffff;
+}
+.wrap .right-panel .prog-info a {
+  color: #ffffff;
+}
+.wrap .right-panel .prog-info #chTitle {
+  height: 100%;
+  padding: 0 20px;
+  line-height: 50px;
+  cursor: pointer;
+  display: block;
+  float: left;
+}
+.wrap .right-panel .prog-info #chTitle:hover {
+  background: #497799;
+}
+.wrap .right-panel .prog-info #chTitle.hide {
+  display: none;
+}
+.wrap .right-panel .prog-info .menu {
+  height: 100%;
+  float: right;
+}
+.wrap .right-panel .prog-info .menu li {
+  height: 100%;
+  list-style: none;
+  float: left;
+}
+.wrap .right-panel .prog-info .menu li a {
+  height: 100%;
+  padding: 0 15px;
+  line-height: 50px;
+  display: block;
+  cursor: pointer;
+}
+.wrap .right-panel .prog-info .menu li a:hover {
+  background: #497799;
+}
+.wrap .right-panel .player-panel #hlsPlayer {
+  width: 100%;
+  height: 100%;
+}
+.wrap .right-panel .player-panel #hlsPlayer .vjs-big-play-button {
+  display: none;
+}
