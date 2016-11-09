@@ -44,6 +44,7 @@ var tvmPlayer = (function() {
         src: url,
         type: 'application/x-mpegURL'
       });
+      if(window.innerWidth < 600) fn.toggleMenu();
       player.play();
       fn.setHighlight(id);
     },
@@ -105,30 +106,55 @@ var tvmPlayer = (function() {
       if(info.getAttribute('class')) info.removeAttribute('class');
       else info.setAttribute('class', 'hide');
     },
+
+    toggleMenu : function() {
+      var menu = document.getElementById('menu'),
+          back = document.getElementById('chBack'),
+          settingBtn = document.getElementById('epgBtn'),
+          winWidth = window.innerWidth;
+      if(menu.className.indexOf("hide") >= 0) {
+        menu.className = "left-panel";
+        back.className = "hide";
+        if(winWidth < 600) settingBtn.className = "hide"; 
+      } else {
+        menu.className = "hide";
+        back.className = "";
+        settingBtn.className = "";
+      }
+      fn.uiResize();
+    },
+
+    uiResize : function() {
+      var navHeight = document.getElementById('appInfoBar').clientHeight,
+          navWidth = document.getElementById('appMenuToggle').clientWidth,
+          searchBarHeight = document.getElementsByClassName('search-panel')[0].clientHeight,
+          winHeight = window.innerHeight,
+          winWidth = window.innerWidth,
+          channelHeight = winHeight - navHeight - searchBarHeight,
+          playerHeight = winHeight - navHeight,
+          rightWidth = winWidth - navWidth;
+      document.getElementById('channelList').style.height = channelHeight + 'px';
+      document.getElementsByClassName('right-panel')[0].style.width = rightWidth + 'px';
+      document.getElementsByClassName('player-panel')[0].style.height = playerHeight + 'px';
+    },
     
     // 初始化頁面
     initUI : function() {
-      function action() {
-        var navHeight = document.getElementById('appMenuToggle').clientHeight,
-            navWidth = document.getElementById('appMenuToggle').clientWidth,
-            searchBarHeight = document.getElementsByClassName('search-panel')[0].clientHeight,
-            winHeight = window.innerHeight,
-            winWidth = window.innerWidth,
-            channelHeight = winHeight - navHeight - searchBarHeight,
-            playerHeight = winHeight - navHeight,
-            rightWidth = winWidth - navWidth;
-        document.getElementById('channelList').style.height = channelHeight + 'px';
-        document.getElementsByClassName('right-panel')[0].style.width = rightWidth + 'px';
-        document.getElementsByClassName('player-panel')[0].style.height = playerHeight + 'px';
-      };
       window.onresize = function(){
-        action();
+        fn.uiResize();
       }
-      action();
-      var playbackTitle = document.getElementById('chTitle');
+      fn.uiResize();
+      /* 為「正在播放」與全屏下返回的按鈕綁定事件 */
+      var playbackTitle = document.getElementById('chTitle'),
+          backClick = document.getElementById('chBack');
       playbackTitle.onclick = function() {
         fn.toggleItemInfo();
       };
+      backClick.onclick = function() {
+        fn.toggleMenu();
+      };
+      /* 寫在這裡欸... 真糟糕 */
+      if(window.innerWidth < 600) document.getElementById('epgBtn').className = "hide";
     },
 
     getCurrentUrl : function() {

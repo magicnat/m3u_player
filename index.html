@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no"/>
     <title>TV.M</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/video-js.css">
@@ -11,15 +12,15 @@
     <div class="wrap">
       
       <!-- 左側欄 -->
-      <div class="left-panel">
+      <div class="left-panel" id="menu">
         <!-- 選單開關 -->
-        <a id="appMenuToggle" href="javascript:;" title="TV.M">
+        <a id="appMenuToggle" href="javascript:tvmPlayer.fn.toggleMenu();" title="TV.M">
           <span class="title">TV.M</span>
           <i class="icon"><b></b><i></i><b></b></i>
         </a>
         <div class="channel-list-panel">
           <!-- 搜尋框 -->
-          <div class="search-panel"><input id="channelSearchBox" type="text" placeholder="在此搜尋節目" onkeyup="tvmPlayer.fn.searchChannel();"></div>
+          <div class="search-panel"><input id="channelSearchBox" type="text" placeholder="在此搜尋節目..." onkeyup="tvmPlayer.fn.searchChannel();"></div>
           <!-- 頻道列表 -->
           <ul id="channelList"></ul>
         </div>
@@ -28,10 +29,11 @@
       <!-- 右側欄 -->
       <div class="right-panel">
         <!-- 節目信息 -->
-        <div class="prog-info">
+        <div id="appInfoBar" class="prog-info">
+          <span id="chBack" title="返回" class="hide">&lt;</span>
           <span id="chTitle" class="hide"></span>
           <ul class="menu">
-            <li><a id="epgBtn" title="節目預告" href="javascript:tvmPlayer.fn.promptSetting()">設置</a></li>
+            <li><a id="epgBtn" title="節目預告" href="javascript:tvmPlayer.fn.promptSetting();">設置</a></li>
             <!--<li><a id="reportBtn" title="報錯" href="javascript:alert('開發中');">報錯</a></li>-->
           </ul>
         </div>

@@ -16,15 +16,23 @@ a {
   color: #333;
   text-decoration: none;
 }
+.hide {
+  display: none;
+}
 .wrap {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 .wrap .left-panel {
-  width: 300px;
+  width: 25%;
   height: 100%;
   float: left;
+}
+@media screen and (max-width : 768px) {
+  .wrap .left-panel {
+    width: 100%;
+  }
 }
 .wrap .left-panel #appMenuToggle {
   width: 100%;
@@ -159,10 +167,21 @@ a {
   display: block;
   float: left;
 }
+.wrap .right-panel .prog-info #chBack {
+  height: 100%;
+  padding: 0 20px;
+  line-height: 50px;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 1.5em;
+  background: #497799;
+}
 .wrap .right-panel .prog-info #chTitle:hover {
   background: #497799;
 }
-.wrap .right-panel .prog-info #chTitle.hide {
+.wrap .right-panel .prog-info #chTitle.hide,
+.wrap .right-panel .prog-info #chBack.hide {
   display: none;
 }
 .wrap .right-panel .prog-info .menu {
@@ -183,6 +202,9 @@ a {
 }
 .wrap .right-panel .prog-info .menu li a:hover {
   background: #497799;
+}
+.wrap .right-panel .prog-info .menu li .hide {
+  display: none;
 }
 .wrap .right-panel .player-panel {
   position: relative;
