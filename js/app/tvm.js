@@ -69,6 +69,7 @@ var tvmPlayer = (function() {
     setHighlight : function(id) {
       var list = document.getElementById('channelList').childNodes,
           playbackTitle = document.getElementById('chTitle'),
+          itemDisplay = document.getElementById('nowPlaying'),
           chName = '';
       for(var i = 0; i < list.length; i++) {
         var ch = list[i];
@@ -79,6 +80,7 @@ var tvmPlayer = (function() {
           chName = ch.title;
         }
       }
+      itemDisplay.value = fn.getCurrentUrl();
       playbackTitle.removeAttribute('class', 'hide');
       playbackTitle.innerHTML = chName;
       playbackTitle.title = chName;
@@ -96,6 +98,12 @@ var tvmPlayer = (function() {
           ch.removeAttribute('class', 'hide');
         }
       }
+    },
+
+    toggleItemInfo : function() {
+      var info = document.getElementById('itemInfo');
+      if(info.getAttribute('class')) info.removeAttribute('class');
+      else info.setAttribute('class', 'hide');
     },
     
     // 初始化頁面
@@ -117,6 +125,14 @@ var tvmPlayer = (function() {
         action();
       }
       action();
+      var playbackTitle = document.getElementById('chTitle');
+      playbackTitle.onclick = function() {
+        fn.toggleItemInfo();
+      };
+    },
+
+    getCurrentUrl : function() {
+        return player.cache_.src ? player.cache_.src : "";
     },
 
     loadSetting : function() {

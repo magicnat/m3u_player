@@ -113,7 +113,7 @@ a {
   overflow: hidden;
 }
 .wrap .left-panel .channel-list-panel #channelList li:hover {
-  background: #f2fffa;
+  background: #f5f5f5;
 }
 .wrap .left-panel .channel-list-panel #channelList li.curr {
   background: #6490b1;
@@ -184,10 +184,123 @@ a {
 .wrap .right-panel .prog-info .menu li a:hover {
   background: #497799;
 }
+.wrap .right-panel .player-panel {
+  position: relative;
+}
 .wrap .right-panel .player-panel #hlsPlayer {
   width: 100%;
   height: 100%;
 }
+.wrap .right-panel .player-panel #itemInfo.hide {
+  display: none;
+}
+.wrap .right-panel .player-panel #itemInfo {
+  position: absolute;
+  color: #000;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  width: 400px;
+  margin: 1em;
+}
+.wrap .right-panel .player-panel #itemInfo .nowPlayingLabel {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #5682a3;
+  color: #ffffff;
+  display: block;
+  text-indent: 1em;
+}
+.wrap .right-panel .player-panel #itemInfo #nowPlaying {
+  height: 40px;
+  padding: 0 10px;
+  line-height: 30px;
+  background: #ffffff;
+  border-width: 0 0 1px 0;
+  border-color: #666;
+  width: 95%;
+}
 .wrap .right-panel .player-panel #hlsPlayer .vjs-big-play-button {
   display: none;
+}
+.mask {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mask .win > .t {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #5682a3;
+  color: #ffffff;
+  display: block;
+  text-indent: 1em;
+}
+.mask .win > .dismiss {
+  position: absolute;
+  color: rgba(255, 255, 255, .75);
+  top: 0;
+  right: 0.6em;
+  height: 40px;
+  line-height: 40px;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+.mask .win > .dismiss:hover {
+  color: rgba(255, 255, 255, 1);
+}
+.mask .win > .dismiss:active {
+  color: rgba(255, 255, 255, .25);
+}
+.mask .win.setting_panel {
+  width: 500px;
+  background: #ffffff;
+  display: inline-block;
+  position: relative;
+}
+.mask .win.setting_panel .ent {
+  width: 400px;
+  margin: 0 auto;
+}
+.mask .win.setting_panel .ent input {
+  width: 100%;
+  margin: 20px 0;
+  display: block;
+  outline: none;
+  box-sizing: border-box;
+}
+.mask .win.setting_panel .ent input[type='text'],
+.mask .win.setting_panel .ent input[type='password'] {
+  height: 30px;
+  padding: 0 10px;
+  line-height: 30px;
+  background: #ffffff;
+  border-width: 0 0 1px 0;
+  border-color: #666;
+  display: inline-block;
+  width: 75%;
+}
+.mask .win.setting_panel .ent input[type='button'] {
+  height: 32px;
+  line-height: 32px;
+  background: #ffffff;
+  border: 1px solid #5682a3;
+  color: #5682a3;
+  cursor: pointer;
+  display: inline-block;
+  width: 20%;
+  margin-left: 2em;
+}
+.mask .win.setting_panel .ent input[type='button']:hover {
+  background: #5682a3;
+  color: #ffffff;
 }
