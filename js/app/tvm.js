@@ -45,7 +45,7 @@ var tvmPlayer = (function() {
         src: url,
         type: 'application/x-mpegURL'
       });
-      if(window.innerWidth < 768 || (window.innerHeight < 768 && window.innerHeight > window.innerWidth)) fn.toggleMenu();
+      if(winSize.getWidth() < 768) fn.toggleMenu();
       player.play();
       fn.setHighlight(id);
     },
@@ -116,7 +116,7 @@ var tvmPlayer = (function() {
       if(menu.className.indexOf("hide") >= 0) {
         menu.className = "left-panel";
         back.className = "hide";
-        if(winWidth < 600) settingBtn.className = "hide"; 
+        if(winSize.getWidth() < 768) settingBtn.className = "hide"; 
       } else {
         menu.className = "hide";
         back.className = "";
@@ -155,7 +155,7 @@ var tvmPlayer = (function() {
         fn.toggleMenu();
       };
       /* 寫在這裡欸... 真糟糕 */
-      if(window.innerWidth < 600) document.getElementById('epgBtn').className = "hide";
+      if(winSize.getWidth() < 768) document.getElementById('epgBtn').className = "hide";
     },
 
     getCurrentUrl : function() {
