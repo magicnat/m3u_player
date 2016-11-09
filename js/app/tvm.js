@@ -16,16 +16,17 @@ var tvmPlayer = (function() {
           var m3uContent = m3u.parse(xmlHttp.responseText),
               i = 0;
           for(var i = 0; i < m3uContent.length; i++) {
-            var id = ++i,
+            var id = i+1,
                 ch = m3uContent[i],
                 title = ch.name,
                 url = ch.url,
-                item = document.createElement('li')
+                item = document.createElement('li');
             item.title = title;
             item.setAttribute('data-id', id);
             item.setAttribute('play-url', url);
             item.innerHTML = '<span class="num">' + id + '</span>' + '<span class="t">' + title + '</span>';
             channelList.appendChild(item);
+            console.log(item);
             item.onclick = function() {
               var url = this.getAttribute('play-url');
               var id = this.getAttribute('data-id');
