@@ -75,7 +75,7 @@ var tvmPlayer = (function() {
       for(var i = 0; i < list.length; i++) {
         var ch = list[i];
         if(ch.getAttribute('data-id') != id) {
-          ch.removeAttribute('class', 'curr');
+          ch.removeAttributeItem('class', 'curr'); 
         } else {
           ch.setAttribute('class', 'curr');
           chName = ch.title;
