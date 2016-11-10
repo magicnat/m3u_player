@@ -5,11 +5,11 @@ var winSize = (function () {
 	},
 
 	getWidth = function () {
-		return isLandscape ? window.innerHeight : window.innerWidth;
+		return isLandscape() ? window.innerHeight : window.innerWidth;
 	},
 
 	getHeight = function () {
-		return isLandscape ? window.innerWidth : window.innerHeight;
+		return isLandscape() ? window.innerWidth : window.innerHeight;
 	};
 
 	return {
