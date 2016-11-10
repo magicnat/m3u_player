@@ -63,7 +63,7 @@ a {
   display: block;
 }
 .wrap .left-panel #appMenuToggle .title {
-  margin: 0 0 0 65px;
+  margin: 0 0 0 1.5em;
 }
 .wrap .left-panel .channel-list-panel {
   width: 100%;
@@ -276,12 +276,13 @@ a {
   padding: 0 15px;
 }
 .mask .win > .dismiss:hover {
-  background: #497799;
+  background: #994941;
 }
 .mask .win > .dismiss:active,
 .wrap .right-panel .prog-info #chBack:active,
 .wrap .right-panel .prog-info .menu li a:active,
-.wrap .right-panel .prog-info #chTitle:active {
+.wrap .right-panel .prog-info #chTitle:active,
+.wrap .left-panel #appMenuToggle:active {
   color: rgba(255, 255, 255, .25);
 }
 .mask .win.setting_panel {
