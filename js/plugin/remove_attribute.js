@@ -6,5 +6,6 @@ HTMLElement.prototype.removeAttributeItem = function (attr, item) {
          * However it is good enought for me to use, so...
          * WHO CARES?
          */
-	this.setAttribute(attr, this.getAttribute(attr).replace(item, ''));
+	if(this.getAttribute(attr))
+		this.setAttribute(attr, this.getAttribute(attr).replace(item, ''));
 };
