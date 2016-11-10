@@ -91,7 +91,7 @@ a {
           transition: .3s all ease;
 }
 .wrap .left-panel .channel-list-panel .search-panel #channelSearchBox:focus {
-  border: 1px solid #d9dbde;
+  border: 2.3px solid rgb(64, 195, 243);
   background: #ffffff;
 }
 .wrap .left-panel .channel-list-panel #channelList {
@@ -313,6 +313,13 @@ a {
   border-color: #666;
   width: 100%;
   border-radius: 0px;
+  -webkit-transition: .1s all ease;
+  transition: .1s all ease;
+}
+.mask .win.setting_panel .ent input[type='text']:focus,
+.mask .win.setting_panel .ent input[type='password']:focus {
+  border-width: 0 0 2.3px 0;
+  border-color: rgb(64, 195, 243);
 }
 .mask .win.setting_panel .ent input[type='button'] {
   height: 32px;
