@@ -97,6 +97,7 @@ a {
 .wrap .left-panel .channel-list-panel #channelList {
   width: 100%;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .wrap .left-panel .channel-list-panel #channelList::-webkit-scrollbar {
   width: 1px;
