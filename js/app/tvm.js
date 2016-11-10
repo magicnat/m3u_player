@@ -26,7 +26,6 @@ var tvmPlayer = (function() {
             item.setAttribute('play-url', url);
             item.innerHTML = '<span class="num">' + id + '</span>' + '<span class="t">' + title + '</span>';
             channelList.appendChild(item);
-            console.log(item);
             item.onclick = function() {
               var url = this.getAttribute('play-url');
               var id = this.getAttribute('data-id');
