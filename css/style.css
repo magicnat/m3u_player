@@ -280,7 +280,6 @@ a {
 }
 .mask .win > .dismiss:active,
 .wrap .right-panel .prog-info #chBack:active,
-.wrap .left-panel #appMenuToggle:active,
 .wrap .right-panel .prog-info .menu li a:active,
 .wrap .right-panel .prog-info #chTitle:active {
   color: rgba(255, 255, 255, .25);
