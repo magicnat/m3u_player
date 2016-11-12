@@ -93,7 +93,7 @@ var tvmPlayer = (function() {
           list = document.getElementById('channelList').childNodes;
       for(var i = 0; i < list.length; i++) {
         var ch = list[i];
-        if(keyword != '' && ch.title.indexOf(keyword) < 0) {
+        if(keyword != '' && ch.title.toLowerCase().indexOf(keyword.toLowerCase()) < 0) {
           ch.setAttribute('class', 'hide');
         } else {
           ch.removeAttribute('class', 'hide');
